@@ -9,6 +9,7 @@ jobs:
   push_to_registry:
     name: push docker image to hub
     runs-on: self-hosted
+    if: ${{ github.event.workflow_run.conclusion == 'success' }}
     permissions:
       packages: write
       contents: read
